@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express();
 const path = require('path');
-const port = process.env.port || 4200;
+const port = process.env.PORT || 4200;
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const flash = require('connect-flash');
