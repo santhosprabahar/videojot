@@ -15,7 +15,7 @@ const passport = require('passport');
 mongoose.Promise = global.Promise //to get rid of deprecated warnings
 
 const db = require('./config/db');
-mongoose.connect(db.mongoURI).then(()=>{
+mongoose.connect('mongodb://santhosprabahar:sandyprabuq123@ds237967.mlab.com:37967/node_demo').then(()=>{
     console.log('MongoDB connected');
 });
 
