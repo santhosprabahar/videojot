@@ -1,0 +1,11 @@
+
+    <div class="form-group">
+        <form action="/idea/edit/{{data._id}}?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="PUT">
+            <label for="title">Title:</label>
+            <input type="text" name="title" class="form-control col-md-3" placeholder="Add a Title"
+                        value="{{data.title}}">
+            <label for="details">Details:</label>
+            <textarea class="form-control col-md-3" rows="5" name="details" >{{data.details}}</textarea>
+    </div>
+    <input type="submit" class="btn btn-primary" value="submit">

@@ -1,0 +1,30 @@
+    <div class="row mt-5">
+        <div class="col-md-6 login">
+            <div class="card card-body">
+                <h2>Account Register</h2>
+                <form action="/users/register" method="post">
+                    <div class="form-group">
+                        <div class="mt-3">
+                            <label for="username">UserName:</label>
+                            <input type="text" name="username" class="form-control" placeholder="UserName" value="{{username}}" required>
+                        </div>
+                        <div class="mt-3">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email" value="{{email}}" required>
+                        </div>
+                        <div class="mt-3">
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" class="form-control" placeholder="Passoword" value="{{password}}" required>
+                        </div>
+                        <div class="mt-3">
+                            <label for="password2">Confirm Password:</label>
+                            <input type="password" name="password2" class="form-control" placeholder="Passoword" value="{{password2}}" required>
+                        </div>
+                        <div class="mt-3">
+                            <input type="submit" value="Submit" class="btn btn-dark">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,17 @@
+<h1>
+    SubMenus
+</h1>
+<div class="row">
+    {{!-- {{submenus}} --}}
+    {{#each submenus}}
+    <div class="card card-body col-sm-3 mr-2" style="width: 18rem;">
+        
+            <h1 class="card-title">{{this}}</h1>
+    </div>
+    {{else}}
+    <div class="container">
+        <p>No submenus Listed</p>
+    </div>
+
+    {{/each}}
+</div>

@@ -1,0 +1,24 @@
+<h1>
+    Video Ideas
+</h1>
+<div class="row">
+    {{#each data}}
+    <div class="card card-body col-sm-3 mr-2" style="width: 18rem;">
+        <a href="/ideas/{{title}}/Addsubmenu"><h1 class="card-title">{{title}}</h1></a>
+        <p class="card-text">{{details}}</p>
+        <a href="/idea/edit/{{_id}}" class="btn btn-dark mb-3">Edit</a>
+        <form method="post" action="/idea/delete/{{_id}}?_method=DELETE">
+            <input type="hidden" name="_method" value="DELETE">
+            
+            <input type="submit" value="Delete" class="btn btn-danger btn-block">
+            <a href="/ideas/{{title}}/submenu" class="btn btn-primary btn-block">Submenus</a>
+        </form>
+    </div>
+    
+    {{else}}
+    <div class="container">
+        <p>No Video Idea Listed</p>
+    </div>
+    
+    {{/each}}
+</div>
