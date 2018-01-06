@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Ideas = mongoose.model('Idea');
 
-const {ensureAuthenticated} = require('../helpers/auth.js');
+const ensureAuthenticated = require('../helpers/auth.js');
 
 
 

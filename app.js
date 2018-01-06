@@ -9,6 +9,7 @@ const session = require('express-session');
 const methodOverride = require('method-override')
 const mongoose = require('mongoose');
 const passport = require('passport');
+const favicon = require('serve-favicon');
 
 
 
@@ -20,6 +21,7 @@ mongoose.connect('mongodb://santhosprabahar:sandyprabuq123@ds237967.mlab.com:379
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname + '/public/images/favicon.ico')));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
