@@ -52,6 +52,7 @@ app.use(function(req,res,next){
     next();
 });
 
+
 require('./models/Ideas.js');
 require('./models/Users.js');
 
@@ -59,8 +60,6 @@ require('./config/passport.js')(passport);
 
 const Ideas_route = require('./routes/ideas.js');
 const Users_route = require('./routes/users.js');
-
-
 
 
 app.get('/', (req, res) => {
@@ -72,10 +71,20 @@ app.get('/', (req, res) => {
 // express handlebars middleware
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
-
 app.use('/ideas', Ideas_route);
 app.use('/idea', Ideas_route);
 app.use('/users', Users_route);
+
+app.get('*', function (req, res) {
+    res.render('no_route');
+});
+
+app.use(function (err, req, res, next) {
+    console.log(err.stack);
+    res.status(404).send('Something broke!')
+    next();
+});
+
 app.listen(port, ()=>{
     console.log(`server started on port ${port}`)
 })

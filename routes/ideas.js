@@ -11,6 +11,7 @@ router.get('/', ensureAuthenticated,(req, res) => {
     Ideas.find({user_id: req.user.id})
         .sort({ Date: 'desc' })
         .then(ideas => {
+            
             res.render('ideas/ideas', {
                 data: ideas
             });
@@ -110,15 +111,6 @@ router.post('/:title/Addsubmenu', ensureAuthenticated,(req,res)=>{
         
     });
     res.redirect(`/ideas/${title}/submenu`)
-    // Ideas.find({user_id: req.user.id})
-    //     .then(Idea =>{
-    //         Idea.update(
-    //             {$push:{submenu:title}}
-    //         );
-    //         Idea.save().then((idea)=> console.log(idea));
-    //         req.flash('success_msg', "Submenu added successfully");
-    //         res.redirect(`/${title}/submenu`);
-    //     });
 });
 
 router.get('/:title/submenu', ensureAuthenticated,(req,res)=>{
